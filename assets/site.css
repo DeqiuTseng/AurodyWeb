@@ -41,9 +41,37 @@ section[id], main, #top { scroll-margin-top: 30px; }
 .main-nav a { display: flex; min-height: 44px; align-items: center; color: var(--muted); }
 .main-nav a.active { color: var(--text); }
 .main-nav a:hover { color: var(--cyan); }
-.language { display: flex; align-items: center; }
+.language { position: relative; display: flex; align-items: center; color: var(--text); }
 .language label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
-.language select { padding-block: 9px; padding-inline: 13px 28px; min-height: 44px; max-width: 150px; border: 1px solid var(--line); border-radius: 25px; color: var(--text); background-color: var(--surface); font-size: 14px; cursor: pointer; }
+.language select {
+  -webkit-appearance: none;
+  appearance: none;
+  padding-block: 9px;
+  padding-inline: 13px 34px;
+  min-height: 44px;
+  max-width: 150px;
+  border: 1px solid var(--line);
+  border-radius: 25px;
+  color: inherit;
+  background-color: var(--surface);
+  font-size: 14px;
+  cursor: pointer;
+}
+.language::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: 15px;
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid;
+  border-bottom: 1.5px solid;
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+}
+@media (forced-colors: active) {
+  .language::after { border-color: ButtonText; }
+}
 .language option { background: var(--base); }
 .hero { display: grid; grid-template-columns: 1.12fr 1fr; align-items: center; gap: 70px; min-height: 740px; padding-block: 60px 88px; }
 .hero-copy { padding-bottom: 25px; }
