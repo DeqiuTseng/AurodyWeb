@@ -1,22 +1,34 @@
 # Website asset sources
 
-Generated from existing project assets; no external downloads.
+Brand and App screenshots are generated from existing project assets.
 
 - Brand: `UI设计/品牌/logo/apple-devices/AppIcon.appiconset/icon-ios-1024x1024.png`
   SHA-256: `f1c807d6a75b170d200b048c8f82a2bc56d07fb9faf4f0d2ef166df985f215f5`
   Outputs: logo-128.png, favicon.png, apple-touch-icon.png, share.png.
 
-- library.webp: `OpenSpec/changes/floating-tabbar-content/evidence/ios-home-en.png`
-  SHA-256: `e89788c2f45e1f8ccf8086e258a7566e5cd98b8fd1b8cdd2ff95c547e9b531e2`
-  Crop: (54, 160, 858, 1898), output: (640, 1383).
+The homepage WebP assets use the English originals from
+`UI设计/上架截图/iOS/2026-11-13/source/`: Aurody 1.0.0 (4), iPhone 17 / iOS 26.3.1, default text size. The source directory includes the simulator build information.
 
-- playlists.webp: `OpenSpec/changes/floating-tabbar-content/evidence/ios-playlists-en.png`
-  SHA-256: `ecfe6a21974ba276d47da1c986488034c1275ecdea1f6127b207535cbc559134`
-  Crop: (54, 160, 858, 1302), output: (640, 909).
+| Output | Source | Source SHA-256 | Crop (x, y, width, height) | Output size |
+| --- | --- | --- | --- | --- |
+| library.webp | en-library.png | `1ee31c07dd65fc1d8bc4128ecb3bd8ac7c26cd883c0738c9b6a5b0342de8d2c6` | (15, 195, 1176, 2321) | 640 × 1263 |
+| playlists.webp | en-playlists.png | `97be1416cbaac118fc068fe4c147b1c1bbb34cfb2d104c2d0367fc166498ab9c` | (15, 204, 1176, 1521) | 640 × 828 |
+| playback-detail.webp | en-player.png | `d41b2b687bec5a55f7cb8ce1a254ac339f68b8fb97c706f8d04d03227dc55c4c` | (163, 665, 880, 880) | 640 × 640 |
 
-- playback-detail.webp: `OpenSpec/changes/localize-app-modules/evidence/ios/zh-Hant-player.png`
-  SHA-256: `3acc52b75a3b643053cde886d74a58f7fbd114e7f2839e714cd384adb807f3e9`
-  Crop: (168, 480, 744, 1056), output: (640, 640).
+The screenshots use original demonstration media. The playback crop shows the app-drawn record without song or artist text. The website uses the same captures in all nine languages and localizes the alternative text.
 
+Regenerate the screenshots from the main repository with `python3 .agents/scripts/generate-aurody-web-assets.py --screenshots-only` (requires Pillow).
 
-Screenshots show an actual iPhone App with project test data. Simulator chrome is cropped. The playback detail contains only the app-drawn record, with no song title, artist, lyrics or external cover art. Screenshots are presentation assets, not browser playback controls. They do not constitute website acceptance evidence.
+## App Store download badges
+
+Unmodified black badges from [Apple App Store Marketing Tools](https://toolbox.marketingtools.apple.com/app-store/).
+
+- [English](https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us)
+- [Simplified Chinese](https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/zh-cn)
+- [Traditional Chinese](https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/zh-tw)
+- [Spanish](https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/es-mx)
+- [French](https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/fr-fr)
+- [Bangla](https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/bn-in)
+- [Portuguese](https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/pt-br)
+
+Arabic and Hindi use the English badge with a localized download label because the public badge API did not return localized artwork for those languages.

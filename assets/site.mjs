@@ -1,21 +1,20 @@
 import { copy } from './content.mjs';
+import { languages, storeBadges } from './languages.mjs';
 
 const storageKey = 'aurody.website.language';
 export function supportedLanguage(locale) {
   const tag = String(locale ?? '').toLowerCase().replaceAll('_', '-');
-  if (tag === 'en' || tag.startsWith('en-')) return 'en';
   if (tag === 'zh' || tag.startsWith('zh-')) {
     if (tag.split('-').includes('hans')) return 'zh-Hans';
     if (tag.split('-').includes('hant')) return 'zh-Hant';
     return /(?:^|-)(tw|hk|mo)(?:-|$)/.test(tag) ? 'zh-Hant' : 'zh-Hans';
   }
-  return null;
+  const base = tag.split('-')[0];
+  return Object.hasOwn(languages, base) ? base : null;
 }
 
 export function chooseLanguage({ explicit, saved, languages = [] } = {}) {
-  if (Object.hasOwn(copy, explicit)) return explicit;
-  if (Object.hasOwn(copy, saved)) return saved;
-  return languages.map(supportedLanguage).find(Boolean) ?? 'en';
+  return supportedLanguage(explicit) ?? supportedLanguage(saved) ?? languages.map(supportedLanguage).find(Boolean) ?? 'en';
 }
 
 export function readPreference() {
@@ -29,6 +28,11 @@ export function savePreference(language) {
 function applyLanguage(lang) {
   const dict = copy[lang];
   document.documentElement.lang = lang;
+  document.documentElement.dir = languages[lang].dir;
+  const badgeLang = Object.hasOwn(storeBadges, lang) ? lang : 'en';
+  document.querySelectorAll('.app-store img[lang]').forEach(badge => { badge.hidden = badge.lang !== badgeLang; });
+  const badgeLabel = document.querySelector('.app-store-label');
+  if (badgeLabel) badgeLabel.hidden = badgeLang === lang;
   document.querySelectorAll('[data-i18n]').forEach(node => {
     node.textContent = dict[node.dataset.i18n];
   });

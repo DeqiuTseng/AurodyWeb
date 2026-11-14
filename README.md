@@ -2,7 +2,7 @@
 
 Aurody official website, maintained as the `AurodyWeb/` submodule of WebMusic.
 
-Four static pages: product (`index.html`), support (`support.html`), privacy (`privacy.html`), third-party components (`sdklist.html`). Desktop presentation is the primary experience; phone browsers receive a responsive single-column layout. All four pages support English, Simplified Chinese and Traditional Chinese. There are no download entries, release-status labels, analytics, advertising or forms.
+Four static pages: product (`index.html`), support (`support.html`), privacy (`privacy.html`), third-party components (`sdklist.html`). Desktop presentation is the primary experience; phone browsers receive a responsive single-column layout. All four pages support English, Simplified Chinese, Traditional Chinese, Spanish, Hindi, Arabic, French, Bangla and Portuguese. Arabic uses a right-to-left layout. The product page links to [Aurody on the China mainland App Store](https://apps.apple.com/cn/app/aurody/id6829440466). The site has no Android download entry, analytics, advertising or forms.
 
 ## Preview and check
 
@@ -16,7 +16,7 @@ python3 -m http.server 8767 --bind 127.0.0.1
 
 Open `http://127.0.0.1:8767/`. For project-path checks, serve the parent repository and open `/AurodyWeb/` instead. The build helper renders English HTML fallback from the shared copy; edit `assets/content.mjs` and the templates in `scripts/build-site.mjs`, then rebuild. Layout is in `assets/site.css`; browser localization is in `assets/site.mjs`.
 
-Use `?lang=en`, `?lang=zh-Hans` or `?lang=zh-Hant` for shareable language selection. Precedence: valid explicit URL selection, saved manual choice, supported browser language, English. Manual choice uses only `aurody.website.language` in localStorage; links and the current URL also preserve it if storage is unavailable. This setting is independent of the App and local Wi-Fi-transfer page. Without JavaScript all content remains readable in English and ordinary links work.
+Use `?lang=<locale>` for shareable language selection, for example `?lang=zh-Hans`, `?lang=ar` or `?lang=pt`. Supported languages and direction are listed in `assets/languages.mjs`. New locale dictionaries are in `assets/locales/`. Precedence: valid explicit URL selection, saved manual choice, supported browser language, English. Manual choice uses only `aurody.website.language` in localStorage; links and the current URL also preserve it if storage is unavailable. This setting is independent of the App and local Wi-Fi-transfer page. Without JavaScript all content remains readable in English and ordinary links work.
 
 Assets and their source hashes/crops are recorded in [assets/SOURCES.md](assets/SOURCES.md). Images are actual App evidence with demo data, not an interactive website player. All fonts, CSS, scripts and images are local/system resources.
 
@@ -39,4 +39,4 @@ Source preparation, local acceptance, local commit, push and live deployment are
 
 ## Content upkeep
 
-Public email: `deqiutseng@gmail.com`. Policy and component text reflects the source review dated November 5, 2026. Recheck native dependency locks, permissions, network and backup behavior when the App changes; review all three languages together. Hosting requests are handled by GitHub, and external audio sources are contacted only through the App behavior explained in the policy. Do not equate a local music library with an absolute promise of no external processing.
+Public email: `deqiutseng@gmail.com`. Policy and component text reflects the source review dated November 5, 2026. Recheck native dependency locks, permissions, network and backup behavior when the App changes; review all nine languages together. Hosting requests are handled by GitHub, and external audio sources are contacted only through the App behavior explained in the policy. Do not equate a local music library with an absolute promise of no external processing.

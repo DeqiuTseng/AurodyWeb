@@ -1,17 +1,23 @@
 // Website copy is independent of native App and local-transfer preferences.
 import { legalCopy } from './legal-content.mjs';
+import es from './locales/es.mjs';
+import hi from './locales/hi.mjs';
+import ar from './locales/ar.mjs';
+import fr from './locales/fr.mjs';
+import bn from './locales/bn.mjs';
+import pt from './locales/pt.mjs';
 export const copy = {
   en: {
     'nav.product': 'Product', 'nav.support': 'Help & support', 'nav.privacy': 'Privacy', 'nav.sdk': 'Third-party components', 'nav.contact': 'Contact developer', 'nav.language': 'Website language', 'nav.home': 'Aurody home', 'nav.skip': 'Skip to content',
     'footer.line': 'Your music. Your collection.', 'footer.rights': '© 2026 Aurody', 'footer.top': 'Back to top',
     'meta.home': 'Aurody — Let your music glow.', 'meta.support': 'Help & support — Aurody', 'meta.privacy': 'Privacy policy — Aurody', 'meta.sdk': 'Third-party components — Aurody',
-    'desc.home': 'Import, organize and enjoy your own music offline. Aurody brings your collection together on iPhone and Android.',
+    'desc.home': 'Import, organize and enjoy your own music offline. Get Aurody for iPhone on the App Store.',
     'desc.support': 'Get help importing files, transferring music over Wi-Fi, using lyrics and managing your Aurody collection.',
     'desc.privacy': 'How Aurody handles local music, network connections, system backups and website preferences.',
     'desc.sdk': 'The Android and iOS components used by Aurody, their purposes and source links.',
-    'hero.platform': 'For iPhone and Android', 'hero.title': 'Let your music glow.',
+    'hero.platform': 'Available for iPhone on the App Store', 'hero.title': 'Let your music glow.',
     'hero.body': 'The albums you come back to. The songs you keep close. Bring your own music together, and take it offline with Aurody.',
-    'hero.help': 'Explore the guide', 'hero.note': 'Your own files. No account required.',
+    'hero.download': 'Download on the App Store', 'hero.help': 'Explore the guide', 'hero.note': 'Your own files. No account required.',
     'hero.image': 'Actual Aurody music-library screen with demonstration tracks.', 'hero.caption': 'Inside Aurody · App screenshots use demonstration content.',
     'intro.title': 'A home for the music you keep.', 'intro.body': 'From the first file you import to the playlist you know by heart. Aurody is a player for your own collection, with no built-in streaming catalog.',
     'import.title': 'Bring your collection along.', 'import.body': 'Choose a file, share from another app, or send music from your computer. Three ways in, one place to listen.',
@@ -60,8 +66,8 @@ export const copy = {
     'nav.product': '产品介绍', 'nav.support': '使用帮助', 'nav.privacy': '隐私政策', 'nav.sdk': '第三方组件', 'nav.contact': '联系开发者', 'nav.language': '网站语言', 'nav.home': 'Aurody 首页', 'nav.skip': '跳到正文',
     'footer.line': '你的音乐，你的收藏。', 'footer.rights': '© 2026 Aurody', 'footer.top': '回到顶部',
     'meta.home': 'Aurody — 让音乐发光。', 'meta.support': '使用帮助 — Aurody', 'meta.privacy': '隐私政策 — Aurody', 'meta.sdk': '第三方组件 — Aurody',
-    'desc.home': '导入、整理，随时离线聆听自己的音乐。Aurody 将你的音乐收藏汇聚在 iPhone 和 Android 手机上。', 'desc.support': '了解 Aurody 的文件导入、Wi-Fi 传歌、本地歌词及音乐文件管理。', 'desc.privacy': '了解 Aurody 如何处理本地音乐、网络连接、系统备份和网站语言偏好。', 'desc.sdk': 'Aurody Android 与 iOS 使用的组件、用途及来源链接。',
-    'hero.platform': '适用于 iPhone 和 Android', 'hero.title': '让音乐发光。', 'hero.body': '反复聆听的专辑，舍不得删掉的歌。把喜欢的音乐收在一起，用 Aurody 随时离线聆听。', 'hero.help': '查看使用帮助', 'hero.note': '导入自己的文件，无需注册账号。', 'hero.image': 'Aurody 音乐库实际界面，歌曲为演示内容。', 'hero.caption': '走进 Aurody · App 截图中的内容为演示数据。',
+    'desc.home': '导入、整理，随时离线聆听自己的音乐。在 App Store 下载 iPhone 版 Aurody。', 'desc.support': '了解 Aurody 的文件导入、Wi-Fi 传歌、本地歌词及音乐文件管理。', 'desc.privacy': '了解 Aurody 如何处理本地音乐、网络连接、系统备份和网站语言偏好。', 'desc.sdk': 'Aurody Android 与 iOS 使用的组件、用途及来源链接。',
+    'hero.platform': 'iPhone 版已在 App Store 上架', 'hero.title': '让音乐发光。', 'hero.body': '反复聆听的专辑，舍不得删掉的歌。把喜欢的音乐收在一起，用 Aurody 随时离线聆听。', 'hero.download': '在 App Store 下载', 'hero.help': '查看使用帮助', 'hero.note': '导入自己的文件，无需注册账号。', 'hero.image': 'Aurody 音乐库实际界面，歌曲为演示内容。', 'hero.caption': '走进 Aurody · App 截图中的内容为演示数据。',
     'intro.title': '让收藏的音乐，有个归处。', 'intro.body': '从导入第一首歌，到整理熟悉的歌单。Aurody 为你自己的音乐收藏而设计，不提供在线曲库。',
     'import.title': '把喜欢的音乐，带在身边。', 'import.body': '从文件选择，从其他 App 分享，或从电脑传入。三种方式，同一个音乐库。', 'import.file.title': '选择音乐文件', 'import.file.body': '通过系统文件选择器导入音乐。文件会复制到 Aurody 内，请保留原件。', 'import.share.title': '分享到 Aurody', 'import.share.body': '在其他 App 中选中音频，通过手机的系统分享菜单发送到 Aurody。', 'import.wifi.title': '从电脑传入', 'import.wifi.body': '在 Aurody 中开启 Wi-Fi 传歌，再用电脑浏览器输入手机显示的临时地址与验证码。', 'import.link': '查看导入说明',
     'library.title': '每一刻，都有想听的专辑。\n每一首，都有自己的位置。', 'library.body': '按歌曲、专辑和艺人浏览，搜索收藏、标记喜欢，再把不同心情整理成自己的歌单。', 'library.image': 'Aurody 歌单实际界面，展示演示歌单。', 'library.caption': '按你的方式，整理音乐收藏。',
@@ -93,8 +99,8 @@ export const copy = {
     'nav.product': '產品介紹', 'nav.support': '使用指南', 'nav.privacy': '隱私權政策', 'nav.sdk': '第三方元件', 'nav.contact': '聯絡開發者', 'nav.language': '網站語言', 'nav.home': 'Aurody 首頁', 'nav.skip': '跳至主要內容',
     'footer.line': '你的音樂，你的收藏。', 'footer.rights': '© 2026 Aurody', 'footer.top': '回到頂端',
     'meta.home': 'Aurody — 讓音樂發光。', 'meta.support': '使用指南 — Aurody', 'meta.privacy': '隱私權政策 — Aurody', 'meta.sdk': '第三方元件 — Aurody',
-    'desc.home': '匯入、整理，隨時離線聆聽自己的音樂。Aurody 將你的音樂收藏匯聚在 iPhone 與 Android 手機上。', 'desc.support': '瞭解 Aurody 的檔案匯入、Wi-Fi 傳歌、本機歌詞及音樂檔案管理。', 'desc.privacy': '瞭解 Aurody 如何處理本機音樂、網路連線、系統備份與網站語言偏好。', 'desc.sdk': 'Aurody Android 與 iOS 使用的元件、用途及來源連結。',
-    'hero.platform': '適用於 iPhone 與 Android', 'hero.title': '讓音樂發光。', 'hero.body': '反覆聆聽的專輯，捨不得刪除的歌。把喜歡的音樂收在一起，用 Aurody 隨時離線聆聽。', 'hero.help': '查看使用指南', 'hero.note': '匯入自己的檔案，無須註冊帳號。', 'hero.image': 'Aurody 音樂庫實際畫面，歌曲為示範內容。', 'hero.caption': '走進 Aurody · App 螢幕截圖中的內容為示範資料。',
+    'desc.home': '匯入、整理，隨時離線聆聽自己的音樂。在 App Store 下載 iPhone 版 Aurody。', 'desc.support': '瞭解 Aurody 的檔案匯入、Wi-Fi 傳歌、本機歌詞及音樂檔案管理。', 'desc.privacy': '瞭解 Aurody 如何處理本機音樂、網路連線、系統備份與網站語言偏好。', 'desc.sdk': 'Aurody Android 與 iOS 使用的元件、用途及來源連結。',
+    'hero.platform': 'iPhone 版已在 App Store 上架', 'hero.title': '讓音樂發光。', 'hero.body': '反覆聆聽的專輯，捨不得刪除的歌。把喜歡的音樂收在一起，用 Aurody 隨時離線聆聽。', 'hero.download': '在 App Store 下載', 'hero.help': '查看使用指南', 'hero.note': '匯入自己的檔案，無須註冊帳號。', 'hero.image': 'Aurody 音樂庫實際畫面，歌曲為示範內容。', 'hero.caption': '走進 Aurody · App 螢幕截圖中的內容為示範資料。',
     'intro.title': '讓收藏的音樂，有個歸處。', 'intro.body': '從匯入第一首歌，到整理熟悉的播放清單。Aurody 為你自己的音樂收藏而設計，不提供線上曲庫。',
     'import.title': '把喜歡的音樂，帶在身邊。', 'import.body': '從檔案選取、從其他 App 分享，或從電腦傳入。三種方式，同一個音樂庫。', 'import.file.title': '選取音樂檔案', 'import.file.body': '透過系統檔案選擇器匯入音樂。檔案會複製到 Aurody 內，請保留原始檔。', 'import.share.title': '分享到 Aurody', 'import.share.body': '在其他 App 中選取音訊，透過手機的系統分享選單傳送到 Aurody。', 'import.wifi.title': '從電腦傳入', 'import.wifi.body': '在 Aurody 中開啟 Wi-Fi 傳歌，再用電腦瀏覽器輸入手機顯示的臨時位址與驗證碼。', 'import.link': '查看匯入說明',
     'library.title': '每一刻，都有想聽的專輯。\n每一首，都有自己的位置。', 'library.body': '依歌曲、專輯與藝人瀏覽，搜尋收藏、標記喜愛，再把不同心情整理成自己的播放清單。', 'library.image': 'Aurody 播放清單實際畫面，顯示示範清單。', 'library.caption': '依你的方式，整理音樂收藏。',
@@ -125,6 +131,7 @@ export const copy = {
 };
 
 for (const language of Object.keys(copy)) Object.assign(copy[language], legalCopy[language]);
+Object.assign(copy, { es, hi, ar, fr, bn, pt });
 
 export const components = {
   android: [
