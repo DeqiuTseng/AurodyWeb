@@ -37,6 +37,18 @@ After the website commit has been reviewed and pushing is authorized:
 
 Source preparation, local acceptance, local commit, push and live deployment are separate milestones. Follow the parent repository's `22` / `55` authorization rules. This website change does not update the App's policy URLs, permissions, backup settings or dependencies.
 
+## app-ads.txt
+
+The repository root includes `app-ads.txt` with the authorized Google seller record:
+
+```text
+google.com, pub-4348685463139053, DIRECT, f08c47fec0942fa0
+```
+
+AdMob checks the hostname-root path derived from the developer website in the app's store listing: [https://deqiutseng.github.io/app-ads.txt](https://deqiutseng.github.io/app-ads.txt). On November 24, 2026, this endpoint already returned HTTP 200 and the exact record as plain text. This is an observation of the existing root site, not a deployment from this repository.
+
+Publishing this project repository with the current GitHub Pages settings serves its copy at `https://deqiutseng.github.io/AurodyWeb/app-ads.txt`; it does not update the hostname-root file. Maintain the root site's file separately if the publisher record changes. The static file does not load an advertising SDK or display ads. Final app verification is performed in AdMob and is separate from checking public file availability. See [Google's crawler-path documentation](https://support.google.com/admob/answer/9776740).
+
 ## Content upkeep
 
 Public email: `deqiutseng@gmail.com`. Policy and component text reflects the source review dated November 5, 2026. Recheck native dependency locks, permissions, network and backup behavior when the App changes; review all nine languages together. Hosting requests are handled by GitHub, and external audio sources are contacted only through the App behavior explained in the policy. Do not equate a local music library with an absolute promise of no external processing.
