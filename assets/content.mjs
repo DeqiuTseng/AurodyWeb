@@ -1,3 +1,4 @@
+import { advertisingCopy } from './advertising-copy.mjs';
 // Website copy is independent of native App and local-transfer preferences.
 import { legalCopy } from './legal-content.mjs';
 import es from './locales/es.mjs';
@@ -48,7 +49,7 @@ export const copy = {
     'privacy.network.title': 'Connections you choose to make', 'privacy.network.body': 'Wi-Fi transfer receives the files you select from a browser on your local network and uses a temporary code to authorize uploads. Transfer uses local HTTP, not encryption; use a trusted network and close the session when finished. When you add and play an HTTP/HTTPS audio link, the source server receives requests, including your IP address and requested URL, and may apply its own logging and privacy practices. HTTP audio traffic is not encrypted. Aurody may cache parts of the response locally. Selecting a cloud-hosted file may also contact your chosen file provider.',
     'privacy.permissions.title': 'System access and playback', 'privacy.permissions.body': 'The system file picker and share menu let you choose which files to provide. Local-network access is used for Wi-Fi transfer where required by the system. Background playback and system media controls can expose the current song title, artist and artwork on the lock screen, notification area or connected media device. Aurody’s current music features do not request contacts, microphone or location access. Manage app permissions in your system settings.',
     'privacy.backup.title': 'Backups and device migration', 'privacy.backup.body': 'Local storage does not mean that data can never leave the device. The current Android configuration allows system backup; iOS app data is not explicitly excluded from system backups. Depending on your device settings and system limits, app data may participate in cloud backup or migration handled by your platform provider. This differs from Aurody uploading your music to a developer-operated service. Keep your originals and manage backups through system settings.',
-    'privacy.components.title': 'Third-party components', 'privacy.components.body': 'Aurody uses components for playback, local storage, caching and interface behavior. The reviewed app source does not integrate advertising, analytics or crash-reporting services. Playback and cache components still make requests to sources you choose. See the component list for purposes and source links; following an external link brings you under that service’s own policies.',
+    'privacy.components.title': 'Third-party components', 'privacy.components.body': "The iOS version integrates Google Mobile Ads for an App Open ad during cold launch and Google User Messaging Platform (UMP) for privacy choices. Google may process IP-derived approximate location, device or app identifiers, ad interactions, diagnostics and performance data for advertising, measurement and service operation. The app does not supply your music files or library records to these SDKs. It does not request ATT permission and disables publisher first-party ID and SDK collection through location permissions; this does not prevent IP-derived location or other SDK processing. Ads are requested only when UMP permits them. Where required, revisit Ad privacy options in Privacy & about. Offline or unsuccessful requests do not block the music library. This integration applies to iOS only; the website does not display ads.",
     'privacy.website.title': 'This website', 'privacy.website.body': 'This website has no analytics, advertising, subscription forms or third-party fonts. It stores only your manually chosen website language in this browser’s local storage; that preference is not uploaded by our site scripts. Clear the site’s browser data to remove it. The website is hosted on GitHub Pages: GitHub receives the network requests needed to deliver the pages and assets, and handles hosting information under its own privacy statement.',
     'privacy.email.title': 'When you contact us', 'privacy.email.body': 'If you send an email, the developer receives your email address and the content or attachments you choose to send, to handle your question. Your email provider also processes the message under its own policies. Do not send music files or sensitive information unless needed to explain the issue. To ask about information in a support email, contact the same address.',
     'privacy.control.title': 'Your choices and retention', 'privacy.control.body': 'You can remove library entries, delete internal files, clear network caches when allowed, change permissions, stop transfers and clear website preferences. Files and library data remain until removed by you, the app’s file-management actions or the operating system; temporary caches may be evicted earlier. Removing the app may delete its local data. Copies in system backups or at services you contact are managed separately by those providers.',
@@ -87,7 +88,7 @@ export const copy = {
     'privacy.network.title': '由你发起的网络连接', 'privacy.network.body': 'Wi-Fi 传歌接收你在局域网浏览器中选择的文件，通过临时验证码授权上传。传输使用未加密的本地 HTTP，请使用可信网络，完成后关闭。添加并播放 HTTP/HTTPS 音频链接时，源服务器会收到包括 IP 地址与请求 URL 在内的网络请求，并可能按自身规则记录和处理信息；HTTP 音频流量未加密。Aurody 可能在本地缓存部分响应。选取云端文件时，也可能访问你选择的文件服务商。',
     'privacy.permissions.title': '系统访问与播放控制', 'privacy.permissions.body': '系统文件选择器和分享菜单让你选择提供哪些文件。系统要求时，Wi-Fi 传歌需要局域网访问。后台播放及系统媒体控制可能在锁屏、通知区或连接的媒体设备上显示当前歌名、艺人和封面。Aurody 当前音乐功能不请求通讯录、麦克风或位置权限；你可在系统设置中管理权限。',
     'privacy.backup.title': '系统备份与设备迁移', 'privacy.backup.body': '本地存储不代表数据绝不会离开设备。当前 Android 配置允许系统备份，iOS App 数据未被显式排除在系统备份外。根据设备设置和系统限制，App 数据可能参与平台服务商处理的云备份或设备迁移。这与 Aurody 向开发者运营的服务器上传音乐不同。请保留原件，并通过系统设置管理备份。',
-    'privacy.components.title': '第三方组件', 'privacy.components.body': 'Aurody 使用播放、本地存储、缓存和界面组件。本次核对的 App 源码未接入广告、统计或崩溃上报服务；播放和缓存组件仍会向你选择的音频源发送请求。用途及来源见第三方组件列表。访问外部链接后，相关服务按自身政策处理信息。',
+    'privacy.components.title': '第三方组件', 'privacy.components.body': "iOS 版本接入 Google Mobile Ads，在冷启动时展示开屏广告，并通过 Google User Messaging Platform（UMP）管理隐私选择。Google 可能为广告、衡量及服务运行处理由 IP 推断的大致位置、设备或应用标识、广告互动、诊断和性能数据。App 不向这些 SDK 提供音乐文件或音乐库记录。本次接入不请求 ATT 权限，并关闭发布商第一方 ID 和 SDK 通过定位权限采集位置；这不代表没有基于 IP 的位置推断或其他 SDK 数据处理。仅在 UMP 允许时请求广告；需要时可从“隐私与关于”的“广告隐私选项”重新选择。离线或请求失败不阻塞音乐库。本次仅接入 iOS，官网不展示广告。",
     'privacy.website.title': '本官网', 'privacy.website.body': '本官网不接统计、广告、订阅表单或第三方字体，仅在当前浏览器的本地存储中记录你手动选择的网站语言，本站脚本不会上传该偏好。清除网站浏览器数据即可移除。官网由 GitHub Pages 托管，GitHub 会收到提供网页与资源所需的网络请求，并按其隐私声明处理托管相关信息。',
     'privacy.email.title': '通过邮件联系我们', 'privacy.email.body': '主动发送邮件时，开发者会收到你的邮箱地址以及你选择提供的正文和附件，用于处理问题。邮件服务商也会按自身政策处理邮件。除说明问题所需，请勿发送音乐文件或敏感信息。需要咨询支持邮件中的个人信息时，可联系同一邮箱。',
     'privacy.control.title': '你的选择与保存期限', 'privacy.control.body': '你可以移除音乐库记录、删除内部文件、在允许时清理网络缓存、调整权限、关闭传歌及清除网站偏好。文件和音乐库数据会保留到你、App 文件管理操作或系统将其移除，临时缓存可能更早被清理。卸载可能删除 App 本地数据；系统备份及你访问的服务中的副本由相应服务商单独管理。',
@@ -120,7 +121,7 @@ export const copy = {
     'privacy.network.title': '由你發起的網路連線', 'privacy.network.body': 'Wi-Fi 傳歌接收你在區域網路瀏覽器中選取的檔案，以臨時驗證碼授權上傳。傳輸使用未加密的本機 HTTP，請使用可信任的網路，並於完成後關閉。新增並播放 HTTP/HTTPS 音訊連結時，來源伺服器會收到包含 IP 位址及請求 URL 的網路要求，且可能依自身規則記錄與處理資訊；HTTP 音訊流量未加密。Aurody 可能在本機快取部分回應。選取雲端檔案時，也可能存取你選擇的檔案服務供應商。',
     'privacy.permissions.title': '系統存取與播放控制', 'privacy.permissions.body': '系統檔案選擇器與分享選單讓你選擇提供哪些檔案。系統要求時，Wi-Fi 傳歌需要區域網路存取權限。背景播放及系統媒體控制可能在鎖定畫面、通知區域或已連接的媒體裝置上顯示目前歌名、藝人與封面。Aurody 目前的音樂功能不要求聯絡人、麥克風或位置權限；你可在系統設定中管理權限。',
     'privacy.backup.title': '系統備份與裝置移轉', 'privacy.backup.body': '本機儲存不代表資料絕不會離開裝置。目前 Android 設定允許系統備份，iOS App 資料未被明確排除於系統備份之外。依裝置設定與系統限制，App 資料可能納入平台服務供應商處理的雲端備份或裝置移轉。這與 Aurody 將音樂上傳至開發者營運的伺服器不同。請保留原始檔，並透過系統設定管理備份。',
-    'privacy.components.title': '第三方元件', 'privacy.components.body': 'Aurody 使用播放、本機儲存、快取與介面元件。本次核對的 App 原始碼未整合廣告、分析統計或當機回報服務；播放與快取元件仍會向你選擇的音訊來源送出請求。用途及來源請見第三方元件清單。造訪外部連結後，相關服務會依其政策處理資訊。',
+    'privacy.components.title': '第三方元件', 'privacy.components.body': "iOS 版本整合 Google Mobile Ads，在冷啟動時顯示開屏廣告，並透過 Google User Messaging Platform（UMP）管理隱私選擇。Google 可能為廣告、衡量及服務運作處理由 IP 推斷的概略位置、裝置或 App 識別碼、廣告互動、診斷和效能資料。App 不向這些 SDK 提供音樂檔案或音樂庫紀錄。本次整合不請求 ATT 權限，並關閉發布商第一方 ID 和 SDK 透過定位權限蒐集位置；這不代表沒有根據 IP 推斷位置或其他 SDK 資料處理。僅在 UMP 允許時請求廣告；必要時可從「隱私與關於」的「廣告隱私選項」重新選擇。離線或請求失敗不會阻擋音樂庫。本次僅整合 iOS，官網不顯示廣告。",
     'privacy.website.title': '本官網', 'privacy.website.body': '本官網不使用分析統計、廣告、訂閱表單或第三方字型，僅在目前瀏覽器的本機儲存空間記錄你手動選擇的網站語言，本站指令碼不會上傳該偏好。清除網站瀏覽資料即可移除。官網由 GitHub Pages 託管，GitHub 會收到提供網頁與資源所需的網路要求，並依其隱私權聲明處理託管相關資訊。',
     'privacy.email.title': '以電子郵件聯絡我們', 'privacy.email.body': '主動寄送郵件時，開發者會收到你的電子郵件地址，以及你選擇提供的內文與附件，用來處理問題。郵件服務供應商也會依其政策處理郵件。除說明問題所需，請勿寄送音樂檔案或敏感資訊。若需詢問支援郵件中的個人資訊，可聯絡同一信箱。',
     'privacy.control.title': '你的選擇與保存期間', 'privacy.control.body': '你可以移除音樂庫紀錄、刪除內部檔案、在允許時清除網路快取、調整權限、關閉傳歌及清除網站偏好。檔案與音樂庫資料會保留至你、App 檔案管理操作或系統將其移除，暫存快取可能更早被清除。移除 App 可能刪除其本機資料；系統備份及你造訪的服務中的副本，由相應供應商另外管理。',
@@ -132,6 +133,7 @@ export const copy = {
 
 for (const language of Object.keys(copy)) Object.assign(copy[language], legalCopy[language]);
 Object.assign(copy, { es, hi, ar, fr, bn, pt });
+for (const language of Object.keys(copy)) Object.assign(copy[language], advertisingCopy[language]);
 
 export const components = {
   android: [
@@ -149,6 +151,8 @@ export const components = {
     ['Lottie Android', '6.6.2', 'animation', 'https://github.com/airbnb/lottie-android']
   ],
   ios: [
+    ['Google Mobile Ads SDK', '13.13.0', 'advertising', 'https://developers.google.com/admob/ios/privacy/data-disclosure'],
+    ['Google User Messaging Platform', '3.1.0', 'consent', 'https://developers.google.com/admob/ios/privacy'],
     ['KTVHTTPCache', '3.1.0', 'cache', 'https://github.com/ChangbaDevs/KTVHTTPCache'],
     ['CocoaAsyncSocket', '7.6.5', 'socket', 'https://github.com/robbiehanson/CocoaAsyncSocket'],
     ['MJRefresh', '3.7.9', 'refresh', 'https://github.com/CoderMJLee/MJRefresh'],

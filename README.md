@@ -52,3 +52,9 @@ Publishing this project repository with the current GitHub Pages settings serves
 ## Content upkeep
 
 Public email: `deqiutseng@gmail.com`. Policy and component text reflects the source review dated November 5, 2026. Recheck native dependency locks, permissions, network and backup behavior when the App changes; review all nine languages together. Hosting requests are handled by GitHub, and external audio sources are contacted only through the App behavior explained in the policy. Do not equate a local music library with an absolute promise of no external processing.
+
+## iOS advertising disclosure update (November 26, 2026)
+
+The privacy policy and iOS SDK list now describe the iOS App Open integration with Google Mobile Ads 13.13.0 and UMP 3.1.0. The website itself does not load advertising SDKs. Nine-language source disclosure is maintained in `assets/advertising-copy.mjs`; Google-provided ad creative and privacy messages are separate. The native integration and verification record is maintained in the parent repository at `OpenSpec/changes/integrate-ios-app-open-ads/`. This source update is not a claim that the website or native App has been released. Update the AdMob privacy messages and App Store privacy disclosures for the shipping build before release.
+
+November 27, 2026: the iOS disclosure now includes ATT permission, IDFA use only with authorization, denial/restriction fallback and changing permission in iOS Settings. Nine-language source updated; deployment is still separate.

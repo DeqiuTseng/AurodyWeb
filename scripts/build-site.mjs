@@ -66,6 +66,7 @@ ${articleSection('contact', 'support.contact.title', ['support.contact.body'], '
 </article></div></main>`;
 const privacy = () => `<main id="main">${pageHead('privacy', 'date.label')}<article class="shell legal-article article-body">${p('privacy.scope.body')}
 ${articleSection('collection', 'legal.collect.title', [], ['local', 'network', 'permissions', 'website'].map(id => `${el('h3', `legal.collect.${id}`)}${p(`privacy.${id}.body`)}`).join(''))}
+<section class="article-section" id="ios-advertising">${el('h3', 'privacy.advertising.title')}${p('privacy.advertising.body')}</section>
 ${articleSection('use', 'legal.use.title', ['legal.use.body'])}
 ${articleSection('public', 'legal.public.title', ['legal.public.body'])}
 ${articleSection('disclosure', 'legal.disclosure.title', ['legal.disclosure.body', 'privacy.email.body'])}
@@ -79,15 +80,16 @@ ${articleSection('updates', 'legal.updates.title', ['legal.updates.body'])}
 ${articleSection('contact', 'legal.contact.title', ['legal.contact.body'], '<a class="text-link email-link" href="mailto:deqiutseng@gmail.com"><bdi dir="ltr">deqiutseng@gmail.com</bdi></a>')}
 </article></main>`;
 const providers = {
+  'Google Mobile Ads SDK': 'Google', 'Google User Messaging Platform': 'Google',
   'Material Components': 'Google', 'SmartRefreshLayout (kernel, footer)': 'scwang90 / SmartRefreshLayout contributors', 'Lottie Android': 'Airbnb',
   'KTVHTTPCache': 'ChangbaDevs', 'CocoaAsyncSocket': 'Robbie Hanson / CocoaAsyncSocket contributors', 'MJRefresh': 'CoderMJLee', 'PagerTabStripView': 'Xmartlabs',
   'IQKeyboardManagerSwift (Core, Resign)': 'hackiftekhar', 'IQKeyboardCore': 'hackiftekhar', 'IQKeyboardNotification': 'hackiftekhar', 'IQTextInputViewNotification': 'hackiftekhar'
 };
 const sdkEntries = (platform) => `<section class="component-group" id="${platform}">${h2(`sdk.${platform}`)}${components[platform].map(([name, version, purpose, url]) => {
-  const category = ['playback', 'cache', 'socket'].includes(purpose) ? 'media' : ['storage', 'settings', 'keyboard'].includes(purpose) ? purpose : 'ui';
+  const category = ['advertising', 'consent'].includes(purpose) ? purpose : ['playback', 'cache', 'socket'].includes(purpose) ? 'media' : ['storage', 'settings', 'keyboard'].includes(purpose) ? purpose : 'ui';
   const identifier = (value) => `<bdi dir="ltr">${escape(value)}</bdi>`;
   const field = (label, value) => `<div>${el('dt', `sdk.${label}`)}<dd>${value}</dd></div>`;
-  return `<section class="sdk-entry"><h3>${identifier(name)}</h3><dl>${field('component', identifier(name))}${field('provider', identifier(providers[name] ?? 'Google / Android Open Source Project'))}${field('version', identifier(version))}${field('purpose', el('span', `purpose.${purpose}`))}${field('scenario', el('span', `sdk.scene.${category}`))}${field('sharing', el('span', `sdk.sharing.${category === 'media' ? 'media' : 'local'}`))}${field('data', el('span', `sdk.data.${category}`))}${field('client', identifier(platform === 'android' ? 'Android' : 'iOS'))}${field('official', `<a href="${url}" rel="noreferrer">${identifier(url)}</a>`)}</dl></section>`;
+  return `<section class="sdk-entry"><h3>${identifier(name)}</h3><dl>${field('component', identifier(name))}${field('provider', identifier(providers[name] ?? 'Google / Android Open Source Project'))}${field('version', identifier(version))}${field('purpose', el('span', `purpose.${purpose}`))}${field('scenario', el('span', `sdk.scene.${category}`))}${field('sharing', el('span', `sdk.sharing.${['media', 'advertising', 'consent'].includes(category) ? category : 'local'}`))}${field('data', el('span', `sdk.data.${category}`))}${field('client', identifier(platform === 'android' ? 'Android' : 'iOS'))}${field('official', `<a href="${url}" rel="noreferrer">${identifier(url)}</a>`)}</dl></section>`;
 }).join('')}</section>`;
 const sdk = () => `<main id="main">${pageHead('sdk', 'sdk.date')}<article class="shell legal-article component-body"><div class="component-intro">${p('sdk.intro')}${p('sdk.behavior')}</div>${sdkEntries('android')}${sdkEntries('ios')}${articleSection('system', 'sdk.system.title', ['sdk.system.body', 'sdk.contact'], '<a class="text-link email-link" href="mailto:deqiutseng@gmail.com"><bdi dir="ltr">deqiutseng@gmail.com</bdi></a>')}</article></main>`;
 
